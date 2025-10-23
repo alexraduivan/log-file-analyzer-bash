@@ -1,0 +1,8 @@
+[2025-10-23 14:00:01] [INFO] Service A: Heartbeat OK.
+[2025-10-23 14:00:15] [INFO] Service B: Ping successful to 10.10.1.5.
+[2025-10-23 14:00:22] [NORMAL] Processing data packet from 192.168.1.10.
+[2025-10-23 14:00:30] [ALARM_CRITICAL] Core Router 45: BGP PEER DOWN. FAULT_DETECTED.
+[2025-10-23 14:00:35] [INFO] Service A: Heartbeat OK.
+[2025-10-23 14:00:41] [ALARM_CRITICAL] RAN Site 22: High Packet Loss on interface Gig0/1. FAULT_DETECTED.
+[2025-10-23 14:00:50] [NORMAL] Processing data packet.
+[2025-10-23 14:01:05] [ALARM_CRITICAL] Server VOIS-DB-03: Disk usage 99%. FAULT_DETECTED.
