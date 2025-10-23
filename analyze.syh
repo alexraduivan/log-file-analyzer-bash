@@ -1,0 +1,33 @@
+#!/bin/bash
+# Network Operations Center Log Analysis Script
+
+LOG_FILE="sample_network_log.txt"
+KEYWORD="CRITICAL_FAULT"
+OUTPUT_FILE="filtered_alarms.log"
+SEPARATOR="===================================================="
+
+echo "--- Starting NOC Log Analysis ---"
+
+# 1. Filtering: Use grep to extract only critical alarms.
+grep -i "$KEYWORD" $LOG_FILE > $OUTPUT_FILE
+
+# 2. Reporting and Counting
+ALARM_COUNT=$(wc -l < $OUTPUT_FILE)
+
+echo "1. Filtering log for keyword: $KEYWORD"
+echo "   [RESULT] Found $ALARM_COUNT critical alarms."
+echo ""
+
+# 3. DISPLAYING CRITICAL ALARMS (For immediate escalation)
+if [ $ALARM_COUNT -gt 0 ]; then
+    echo "$SEPARATOR"
+    echo "TOP 5 CRITICAL ALARMS FOUND (for Escalation):"
+    echo "$SEPARATOR"
+    # Display the first 5 critical lines
+    head -n 5 $OUTPUT_FILE
+    echo "$SEPARATOR"
+else
+    echo "No critical alarms ($KEYWORD) found in log."
+fi
+
+echo "--- Analysis Complete. Full results saved to $OUTPUT_FILE ---"
