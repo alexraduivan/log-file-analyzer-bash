@@ -1,0 +1,24 @@
+#!/bin/bash
+# Script de analiza a log-ului pentru NOC
+
+LOG_FILE="sample_log.txt"
+KEYWORD="FAULT_DETECTED"
+OUTPUT_FILE="filtered_alarms.log"
+
+echo "--- Pornim Analiza Log-ului ---"
+
+# 1. Filtrarea: Folosim grep pentru a extrage doar alarmele critice.
+echo "1. Filtram logul pentru cuvantul cheie: $KEYWORD"
+grep -i "$KEYWORD" $LOG_FILE > $OUTPUT_FILE
+
+# 2. Raportare: Aratam cate alarme am gasit.
+ALARM_COUNT=$(wc -l < $OUTPUT_FILE)
+echo "   [REZULTAT] Au fost gasite $ALARM_COUNT alarme critice."
+echo ""
+
+# 3. Vizualizare in Timp Real (Explicatia pentru interviu)
+echo "2. COMANDĂ VITALĂ pentru NOC: Urmareste log-ul in timp real pentru ALARME."
+echo "   (Nu rulam aceasta comanda, dar iata cum arata logica esentiala:)"
+echo "   tail -f $LOG_FILE | grep -i ALARM_CRITICAL"
+
+echo "--- Analiza Incheiata. Rezultatele sunt in $OUTPUT_FILE ---"
