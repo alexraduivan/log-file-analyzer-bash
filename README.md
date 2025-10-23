@@ -15,9 +15,3 @@ Acest proiect demonstrează înțelegerea a două sarcini zilnice critice ale un
 * Linux Core Utilities (`grep`, `wc`, `tail`)
 * Logica de Troubleshooting ITIL (Implicită)
 
-### Cum se Rulează
-1.  Asigură-te că fișierul `sample_log.txt` există.
-2.  Rulează scriptul în terminal: `bash analyze.sh`
-
-### 🔥 Next Steps (Către L2)
-* Refactorizarea scriptului în **Python** pentru a permite trimiterea automată de alerte pe email sau Slack. (Acesta va fi **Proiectul #2** al nostru!)
